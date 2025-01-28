@@ -1,0 +1,98 @@
+/* CSS Variables */
+
+:root {
+  --font-heading: serif;
+  --font-body: sans-serif;
+  --background-color: white;
+  --text-color: black;
+  --feature-color-light: pink;
+  --feature-color-dark: hotpink;
+  --box-shadow-light: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --box-shadow-heavy: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* Global CSS */
+
+body {
+  background-color: var(--background-color);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+p {
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+/* Headings CSS */
+
+h1 {
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  margin-top: 100px;
+}
+
+h2 {
+  color: var(--text-color);
+  font-family: var(--font-heading);
+}
+
+/* Navbar CSS */
+
+.navbar {
+  background-color: var(--feature-color-light);
+  font-family: var(--font-heading);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.navbar-collapse {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Footer CSS */
+
+footer {
+  background-color: var(--feature-color-light);
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  width: 100%;
+  bottom: 0;
+}
+
+.socials {
+  color: var(--text-color);
+}
+
+/* Buttons CSS */
+
+.btn-reg {
+  background-color: var(--feature-color-dark);
+  border: 3px solid var(--feature-color-dark);
+  box-shadow: var(--box-shadow-light);
+  font-family: var(--font-body);
+}
+
+.btn-reg:hover {
+  border: 3px solid var(--feature-color-dark);
+}
+
+/* Home Page CSS */
+
+/* About Page CSS */
+
+/* Portfolio Page CSS */
+
+/* CV Page CSS */
+
+/* Contact Page CSS */
+
+/* Media Queries */
