@@ -2,11 +2,11 @@
 
 :root {
   --font-heading: serif;
-  --font-body: sans-serif;
-  --background-color: white;
-  --text-color: black;
-  --feature-color-light: pink;
-  --feature-color-dark: hotpink;
+  --font-body: "Libre Baskerville", serif;
+  --background-color: #f6f4ef;
+  --text-color: #393e46;
+  --feature-color-light: #ffe9e3;
+  --feature-color-dark: #dfd3c3;
   --box-shadow-light: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   --box-shadow-heavy: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -31,22 +31,18 @@ p {
 
 /* Headings CSS */
 
-h1 {
-  color: var(--text-color);
-  font-family: var(--font-heading);
-  margin-top: 100px;
-}
-
 h2 {
   color: var(--text-color);
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
+  font-size: 25px;
+  text-align: center;
 }
 
 /* Navbar CSS */
 
 .navbar {
   background-color: var(--feature-color-light);
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   position: fixed;
   top: 0;
   width: 100%;
@@ -56,6 +52,42 @@ h2 {
   display: flex;
   justify-content: space-around;
 }
+.nav-link {
+  font-size: 20px;
+  margin: 0 50px;
+}
+
+/* Buttons CSS */
+
+.btn-reg {
+  background-color: var(--feature-color-dark);
+  border: 3px solid var(--feature-color-dark);
+  box-shadow: var(--box-shadow-light);
+  display: block;
+  font-family: var(--font-body);
+  font-size: 20px;
+  margin: 50px auto;
+}
+
+.btn-reg:hover {
+  border: 3px solid var(--feature-color-dark);
+}
+
+/* Home Page CSS */
+
+.romarin-logo {
+  display: block;
+  margin: 150px auto 50px auto;
+  width: 400px;
+}
+
+/* About Page CSS */
+
+/* Portfolio Page CSS */
+
+/* CV Page CSS */
+
+/* Contact Page CSS */
 
 /* Footer CSS */
 
@@ -70,29 +102,7 @@ footer {
 
 .socials {
   color: var(--text-color);
+  font-size: 30px;
 }
-
-/* Buttons CSS */
-
-.btn-reg {
-  background-color: var(--feature-color-dark);
-  border: 3px solid var(--feature-color-dark);
-  box-shadow: var(--box-shadow-light);
-  font-family: var(--font-body);
-}
-
-.btn-reg:hover {
-  border: 3px solid var(--feature-color-dark);
-}
-
-/* Home Page CSS */
-
-/* About Page CSS */
-
-/* Portfolio Page CSS */
-
-/* CV Page CSS */
-
-/* Contact Page CSS */
 
 /* Media Queries */
