@@ -1,43 +1,53 @@
-let currentSlide = 0;
+async function fetchData() {
+  try {
+    const response = await fetch("./src/data.json");
+    const data = await response.json();
 
-function showSlide(index) {
-  const slides = document.querySelectorAll(".slides li");
-  const prevButton = document.querySelector(".carousel-button.prev");
-  const nextButton = document.querySelector(".carousel-button.next");
-
-  // Clamp the index to ensure it's within the bounds
-  currentSlide = Math.max(0, Math.min(index, slides.length - 1));
-
-  const offset = -currentSlide * 100;
-  document.querySelector(".slides").style.transform = `translateX(${offset}%)`;
-
-  // Update button states
-  prevButton.disabled = currentSlide === 0;
-  nextButton.disabled = currentSlide === slides.length - 1; // Disable if on last slide
-}
-
-function nextSlide() {
-  const slides = document.querySelectorAll(".slides li");
-  // Improved condition to prevent going out-of-bounds
-  if (currentSlide < slides.length - 1) {
-    showSlide(currentSlide + 1);
+    return data;
+  } catch (error) {
+    console.log(error);
   }
 }
 
-function prevSlide() {
-  // Improved condition to prevent going out-of-bounds
-  if (currentSlide > 0) {
-    showSlide(currentSlide - 1);
-  }
+async function init() {
+  const swiperWrapper = document.querySelector(".swiper-wrapper");
+
+  const images = await fetchData();
+
+  images.forEach((image) => {
+    swiperWrapper.innerHTML += `
+      <div class="swiper-slide">
+        <img src="${image.src}" alt="${image.alt}" />
+      </div>
+    `;
+  });
+
+  const swiper = new Swiper(".mySwiper", {
+    centeredSlidesBounds: true,
+    height: 600,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".next",
+      prevEl: ".prev",
+    },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+  });
 }
 
-// Initialize the first slide and disable the prev button initially
-showSlide(currentSlide);
-
-// Event listeners for buttons
-document
-  .querySelector(".carousel-button.next")
-  .addEventListener("click", nextSlide);
-document
-  .querySelector(".carousel-button.prev")
-  .addEventListener("click", prevSlide);
+init();
