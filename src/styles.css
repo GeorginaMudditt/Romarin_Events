@@ -21,6 +21,7 @@ body {
 
 a {
   color: var(--text-color);
+  font-size: 20px;
   text-decoration: none;
 }
 
@@ -29,19 +30,37 @@ p {
   font-family: var(--font-body);
 }
 
+hr {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 /* Headings CSS */
+
+h1 {
+  color: var(--text-color);
+  font-family: var(--font-heading);
+  font-size: 80px;
+  margin-top: 200px;
+  text-align: center;
+}
 
 h2 {
   color: var(--text-color);
   font-family: var(--font-body);
-  font-size: 25px;
+  font-size: 30px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 /* Navbar CSS */
 
 .navbar {
-  background-color: var(--feature-color-light);
+  background-color: var(--feature-color-dark);
   font-family: var(--font-body);
   position: fixed;
   top: 0;
@@ -66,6 +85,7 @@ h2 {
   display: block;
   font-family: var(--font-body);
   font-size: 20px;
+  padding: 10px 20px;
   margin: 50px auto;
 }
 
@@ -78,17 +98,17 @@ h2 {
 .romarin-logo {
   display: block;
   margin: 150px auto 50px auto;
-  width: 400px;
+  width: 500px;
 }
 
 .carousel-button {
   position: absolute;
+  font-size: 50px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--feature-color-light);
+  background-color: var(--feature-color-dark);
   color: var(--text-color);
   border: none;
-  height: 50px;
   padding: 10px;
   cursor: pointer;
   z-index: 1;
@@ -96,7 +116,11 @@ h2 {
 
 .swiper-slide {
   border-radius: 30px;
+
+  margin-bottom: 50px;
+  object-fit: cover;
   overflow: hidden;
+  opacity: 0.7;
 }
 
 .carousel-button.prev {
@@ -107,7 +131,21 @@ h2 {
   right: 10px;
 }
 
-/* About Page CSS */
+.introduction-text {
+  font-size: 20px;
+  line-height: 2;
+  margin: 50px auto;
+  text-align: center;
+  width: 70%;
+}
+
+/* Our Services CSS */
+
+.romarin-logo-footer {
+  display: block;
+  margin: 50px auto 50px auto;
+  width: 500px;
+}
 
 /* Portfolio Page CSS */
 
@@ -118,17 +156,27 @@ h2 {
 /* Footer CSS */
 
 footer {
-  background-color: var(--feature-color-light);
-  display: flex;
+  background-color: var(--feature-color-dark);
   justify-content: space-around;
+  margin-top: 50px;
   padding: 20px 0;
   width: 100%;
   bottom: 0;
 }
 
+.socials-container {
+  display: flex;
+  justify-content: center;
+}
+
 .socials {
   color: var(--text-color);
-  font-size: 30px;
+  font-size: 40px;
+  margin: 0 20px;
+}
+.varstar {
+  font-size: 20px;
+  text-align: center;
 }
 
 /* Media Queries */
